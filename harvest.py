@@ -42,9 +42,10 @@ def make_melon_types(Melon_Type):
     all_melon_types.append(musk)
     
 
-    cas = MelonType('cas', 'Casaba', 2003 'orange',
+    cas = MelonType('cas', 'Casaba', 2003, 'orange',
                      False, False)
-    cas.add_pairing('strawberries', 'mint')
+    cas.add_pairing('strawberries')
+    cas.add_pairing("mint")
     all_melon_types.append(cas)
 
     cren = MelonType('cren', "Crenshaw", 1996, 'green',
@@ -58,20 +59,26 @@ def make_melon_types(Melon_Type):
     all_melon_types.append(yw)
 
 
-    print(all_melon_types)
     return all_melon_types
 
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
-
-    print
+    
+    for melon in melon_types:
+    
+        print(f"{melon.name} pairs with \n {melon.pairings}")
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
 
-    # Fill in the rest
+    code_lookup= {}
 
+    for melon in melon_types:
+        
+        code_lookup[melon.code] = melon.name 
+
+    return code_lookup
 ############
 # Part 2   #
 ############
@@ -93,4 +100,5 @@ def get_sellability_report(melons):
     # Fill in the rest 
 
 
-
+result = print_pairing_info(make_melon_types(MelonType))
+print(result)
