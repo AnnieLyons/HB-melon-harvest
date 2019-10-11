@@ -33,7 +33,7 @@ class MelonType(object):
 
 def make_melon_types(Melon_Type):
     """Returns a list of current melon types."""
-
+    
     all_melon_types = []
 
     musk = MelonType('musk', 'Muskmelon', 1998, 'green',
@@ -76,8 +76,8 @@ def make_melon_type_lookup(melon_types):
     for melon in melon_types:
         
         code_lookup[melon.code] = melon.name 
+    
     print(code_lookup)
-
     return code_lookup
 ############
 # Part 2   #
@@ -99,5 +99,4 @@ def get_sellability_report(melons):
 
     # Fill in the rest 
 
-
-print_pairing_info(make_melon_types(MelonType))
+make_melon_type_lookup(make_melon_types(MelonType)
