@@ -99,8 +99,13 @@ class Melon(object):
 
 def make_melons(melon_types):
     """Returns a list of Melon objects."""
+    melon_list = []
 
-    # Fill in the rest
+    for melon in melon_types:
+        melon = Melon
+        melon_list.append(melon)
+
+    return melon_list # work in progress
 
 def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
